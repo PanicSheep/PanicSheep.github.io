@@ -16,11 +16,10 @@ class Fibonacci
     Iterator() noexcept = default;
     Iterator(int n) noexcept : n(n) {}
     
-    [[nodiscard]] bool operator==(const Iterator& o) const noexcept { return n == o.n; }
-    [[nodiscard]] bool operator!=(const Iterator& o) const noexcept { return !(*this == o); }
+    [[nodiscard]] bool operator!=(const Iterator& o) const noexcept { return n != o.n; }
     
     [[nodiscard]] int operator*() const noexcept { return hi; }
-		[[nodiscard]] Iterator& operator++() noexcept {
+    [[nodiscard]] Iterator& operator++() noexcept {
       lo += hi;
       std::swap(lo, hi);
       n--;
@@ -33,9 +32,7 @@ public:
   Fibonacci(int n) noexcept : n(n) {}
   
   Iterator begin() const { return {n}; }
-  Iterator cbegin() const { return {n}; }
-  Iterator end() const { return {}; }
-  Iterator cend() const { return {}; }
+  static Iterator end() { return {}; }
 };
 ```
 
