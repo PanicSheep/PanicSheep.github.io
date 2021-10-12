@@ -1,5 +1,13 @@
 ## PanicSheep's mill
 
+### Cases
+snake_case
+camelCase
+PascalCase
+kebab-case
+COBOL-CASE
+Train-Case
+
 ### C++ generators
 There are several ways to generate sequences in C++.
 
